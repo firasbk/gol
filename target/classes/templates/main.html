@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+	<title>Game of Life</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.2.0/css/bootstrap.min.css"
+        th:href="@{http://cdn.jsdelivr.net/webjars/bootstrap/3.2.0/css/bootstrap.min.css}"
+        rel="stylesheet" media="screen" />
+    <link href="../static/css/styles.css"
+        th:href="@{/css/styles.css}"
+        rel="stylesheet" media="screen" />
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.1/jquery.min.js"
+		th:src="@{http://cdn.jsdelivr.net/webjars/jquery/2.1.1/jquery.min.js}"></script>
+    <script src="../static/js/core.js"
+        th:src="@{/js/core.js}"></script>
+</head>
+<body>
+<div id="holder">
+    <div class="left"><img height="100px" src="../static/images/logo.png" th:src="@{/images/logo.png}" /></div>
+    <div class="right"><img height="80px" src="../static/images/firassig.png" th:src="@{/images/firassig.png}" /></div>
+</div>
+<div id="content">
+    <div class="left" id="game">
+        <div id="main" />
+        <input class="mybutton" id="start-button" type="submit" value="AUTO GENERATE" />
+        <input class="mybutton" id="next-button" type="submit" value="NEXT GENERATION" />
+        <input class="mybutton" id="reset-button" type="submit" value="RESET" /><br/>
+        <div><p>Generation Number: <span id="generationId">0</span></p></div>
+    </div>
+
+    <div id="instructions">
+        <h2>&nbsp;&nbsp;Conway's Game of Life</h2>
+        <p class="myhead">&nbsp;&nbsp;To play the game you can:</p>
+        <p>&nbsp;&nbsp;Select your cells by clicking in the grid and then click on Auto Generate Button to trigger the game, or</p>
+        <p>&nbsp;&nbsp;you can jump from a generation to another by clicking on Next Generation Button, <br/>
+            &nbsp;&nbsp; then you can select your cells with the related pattern and then click on Auto Generate Button to play</p>
+    </div>
+    <div id="toggleRules" class="myhead">&nbsp;&nbsp;View instructions and rules &nbsp;&nbsp;&nbsp;&nbsp;<img height="15px" src="../static/images/playlist.png" th:src="@{/images/playlist.png}" /></div>
+    <div id="rules" hidden="hidden">
+        <p>&nbsp;&nbsp;Conway's Game of Life is a game invented by mathematician John Conway in 1970.</p>
+        <p>&nbsp;&nbsp;Each cell lives in a square in a rectangular grid. A cell can either be dead or alive.<br/>
+            &nbsp;&nbsp;Before you start the game, you need to provide an initial state. It involves advancing through time one step at a time. <br/>
+            &nbsp;&nbsp;A cell's fate depends on the state of its 8 closest neighbors (the grid utilizes wrapping, <br/>
+            &nbsp;&nbsp;meaning a cell on the far left is thought of as a neighbor of a cell on the far right, <br/>
+            &nbsp;&nbsp;and the same principle applies at the top and bottom).</p>
+        &nbsp;&nbsp;We check each cell life or fate in the following phase based on these rules:<br/>
+        <div class="second">
+        <ul>
+            <li> <b>Births:</b> Each dead cell adjacent to exactly three live neighbors will become live in the next generation.</li>
+            <li> <b>Death by isolation:</b> Each live cell with one or fewer live neighbors will die in the next generation.</li>
+            <li> <b>Death by overcrowding:</b> Each live cell with four or more live neighbors will die in the next generation.</li>
+            <li> <b>Survival:</b> Each live cell with either two or three live neighbors will remain alive for the next generation.</li>
+        </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
