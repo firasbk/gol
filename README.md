@@ -1,8 +1,8 @@
 # gol
-# This project is only for study purpose.
+**This project is only for study purpose.**
 
-# This game was implemented using Java language in SpringBoot Framework with JQuery – javascript and simple HTML and has no database.
-# You should use maven to run on localhost:8080. Please note that the backend calculations and functionality were found on spring boot java community for reference.
+**This game was implemented using Java language in SpringBoot Framework with JQuery – javascript and simple HTML and has no database.
+You should use maven to run on localhost:8080. Please note that the backend calculations and functionality were found on spring boot java community for reference.**
 
 The aim of this game is to predict the next generation based on the rules stated below and this is used in many mathematical courses for Computer science students Like Modules of Computations and Finite Automata.
 You can measure your score by counting how many generations your initial pattern lives, and that is by clicking on “NEXT GENERATION” button on each phase and the score will be recorded, or you can click “AUTO GENERATE” and the game will go through all the phases automatically where you can check how long it stays alive. However, again the main game of this is to predict the next phase where the student can check his skills of analysis and prediction.
